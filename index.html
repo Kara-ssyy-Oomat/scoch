@@ -364,41 +364,57 @@ h1 {
 
 
   <script>
-const products = [
+ const products = [
       
+
+
  {id: 1, title: '36*15 (84шт кар)', price: 12, optPrice: 10, optQty: 84, minQty: 7, image: 'фото4лик/3515.jpg' },
+
+
+
  {id: 2, title: '40*30', price: 20, optPrice: 16, optQty: 72,minQty: 6, image: 'фото4лик/4030.jpg' },
-{id: 3, title: '40*50', price: 30, optPrice: 25, optQty: 52,minQty: 6, image: '' },
+{id: 3, title: '40*50', price: 30, optPrice: 25, optQty: 72,minQty: 6, image: 'img2.jpg' },
 {id: 4, title: '40*75', price: 40, optPrice: 35, optQty: 72,minQty: 6, image: 'фото4лик/4075.jpg' },
 {id: 5, title: '40*100', price: 50, optPrice: 45, optQty: 54,minQty: 6, image: 'фото4лик/40100.jpg' },
 {id: 6, title: '40*150', price: 65, optPrice: 60, optQty: 48,minQty: 6, image: 'фото4лик/40150.jpg' },
 {id: 7, title: '40*200', price: 85, optPrice: 80, optQty: 36,minQty: 6, image: 'фото4лик/40200.jpg' },
-{id: 8, title: '40*250', price: 110, optPrice: 100, optQty: 36,minQty: 6, image: '' },
+{id: 8, title: '40*250', price: 110, optPrice: 100, optQty: 36,minQty: 6, image: 'img2.jpg' },
 {id: 9, title: '40*300', price: 150, optPrice: 130, optQty: 30,minQty: 6, image: 'фото4лик/40300.jpg' },
 {id: 10, title: '40*400*24шт/кар', price: 220, optPrice: 200, optQty: 24,minQty: 6, image: 'фото4лик/40400.jpg' },
-{id: 11, title: '45*30', price: 25, optPrice: 20, optQty: 60,minQty: 5, image: '' },
-{id: 12, title: '45*50', price: 35, optPrice: 30, optQty: 60,minQty: 5, image: '' },
-{id: 13, title: '45*75', price: 45, optPrice: 40, optQty: 60,minQty: 5, image: '' },
-{id: 14, title: '45*100', price: 55, optPrice: 50, optQty: 45,minQty: 5, image: '' },
-{id: 15, title: '45*150', price: 70, optPrice: 65, optQty: 40,minQty: 5, image: '' },
-{id: 16, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
-{id: 17, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
-{id: 18, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
-{id: 19, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
-{id: 20, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
-{id: 21, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
-{id: 22, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
-{id: 23, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
-{id: 24, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
-{id: 25, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
-{id: 26, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
-{id: 27, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
-{id: 28, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
-{id: 29, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
-{id: 30, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
-{id: 31, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
-{id: 32, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
-{id: 33, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+
+
+
+{id: 11, title: '45*30', price: 25, optPrice: 20, optQty: 60,minQty: 5, image: 'img2.jpg' },
+{id: 12, title: '45*50', price: 35, optPrice: 30, optQty: 60,minQty: 5, image: 'img2.jpg' },
+{id: 13, title: '45*75', price: 45, optPrice: 40, optQty: 60,minQty: 5, image: 'img2.jpg' },
+{id: 14, title: '45*100', price: 55, optPrice: 50, optQty: 45,minQty: 5, image: 'img2.jpg' },
+{id: 15, title: '45*150', price: 70, optPrice: 65, optQty: 40,minQty: 5, image: 'img2.jpg' },
+
+
+
+{id: 16, title: '50*30', price: 25, optPrice: 25, optQty: 60,minQty: 5, image: 'img2.jpg' },
+{id: 17, title: '50*50', price: 40, optPrice: 35, optQty: 60,minQty: 5, image: 'img2.jpg' },
+{id: 18, title: '50*75', price: 50, optPrice: 45, optQty: 60,minQty: 5, image: 'img2.jpg' },
+{id: 19, title: '50*100', price: 65, optPrice: 60, optQty: 45,minQty: 5, image: 'img2.jpg' },
+{id: 20, title: '50*150', price: 80, optPrice: 70, optQty: 40,minQty: 5, image: 'img2.jpg' },
+{id: 21, title: '50*200', price: 120, optPrice: 100, optQty: 30,minQty: 5, image: 'img2.jpg' },
+{id: 22, title: '50*250', price: 160, optPrice: 130, optQty: 30,minQty: 5, image: 'img2.jpg' },
+{id: 23, title: '50*300', price: 170, optPrice: 150, optQty: 25,minQty: 5, image: 'img2.jpg' },
+{id: 24, title: '50*400', price: 240, optPrice: 220, optQty: 20,minQty: 5, image: 'img2.jpg' },
+
+
+{id: 25, title: '60*50', price: 40, optPrice: 35, optQty: 48,minQty: 4, image: 'img2.jpg' },
+{id: 26, title: '60*100', price: 75, optPrice: 60, optQty: 36,minQty: 4, image: 'img2.jpg' },
+{id: 27, title: '60*150', price: 90, optPrice: 85, optQty: 32,minQty: 4, image: 'img2.jpg' },
+{id: 28, title: '60*200', price: 140, optPrice: 130, optQty: 24,minQty: 4, image: 'img2.jpg' },
+{id: 29, title: '60*250', price: 160, optPrice: 150, optQty: 24,minQty: 4, image: 'img2.jpg' },
+{id: 30, title: '60*300', price: 190, optPrice: 180, optQty: 20,minQty: 4, image: 'img2.jpg' },
+
+
+
+{id: 31, title: '80*200', price: 170, optPrice: 150, optQty: 18,minQty: 3, image: 'img2.jpg' },
+{id: 32, title: '80*250', price: 210, optPrice: 180, optQty: 18,minQty: 3, image: 'img2.jpg' },
+{id: 33, title: '80*300', price: 250, optPrice:220, optQty: 15,minQty: 3, image: 'img2.jpg' },
 {id: 34, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
 {id: 35, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
 {id: 36, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
@@ -471,6 +487,7 @@ const products = [
 
 
 
+
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 
@@ -532,7 +549,6 @@ function renderProducts() {
 // ...existing code...
    
 
-
 function addToCart(id, title, price, image, btn) {
   const qty = +btn.parentElement.parentElement.querySelector('input').value;
   const product = products.find(p => p.id === id);
@@ -541,9 +557,25 @@ function addToCart(id, title, price, image, btn) {
     Swal.fire('Ошибка', `Можно добавить только кратно ${minQty} шт.`, 'warning');
     return;
   }
+
   const index = cart.findIndex(item => item.id === id);
-  if (index !== -1) cart[index].qty += qty;
-  else cart.push({ id, title, price, qty });
+  if (index !== -1) {
+    cart[index].qty += qty;
+    // Пересчёт цены с учётом опта для нового общего количества
+    let newQty = cart[index].qty;
+    let newPrice = product.price;
+    if (product.optPrice && product.optQty && newQty >= product.optQty) {
+      newPrice = product.optPrice;
+    }
+    cart[index].price = newPrice;
+  } else {
+    // Пересчёт цены с учётом опта для первой партии
+    let finalPrice = product.price;
+    if (product.optPrice && product.optQty && qty >= product.optQty) {
+      finalPrice = product.optPrice;
+    }
+    cart.push({ id, title, price: finalPrice, qty });
+  }
   updateCart();
 
   // Анимация кнопки
@@ -566,7 +598,6 @@ function addToCart(id, title, price, image, btn) {
   // Сохраняем корзину в localStorage
   localStorage.setItem('cart', JSON.stringify(cart));
 }
-
 
 
 
