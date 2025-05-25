@@ -749,8 +749,7 @@ const msg = `Новый заказ:
 ${items}
 
 Итого: ${total}c`;
-  
-
+ 
   fetch('https://api.telegram.org/bot7960727448:AAF0B2mizrzj7sjHP68n-1IcjLoNc6kwVkE/sendMessage', {
 
     method: 'POST',
@@ -758,6 +757,17 @@ ${items}
     headers: { 'Content-Type': 'application/json' },
 
     body: JSON.stringify({ chat_id: '5567924440', text: msg })
+    
+
+  })
+    fetch('https://api.telegram.org/bot7960727448:AAF0B2mizrzj7sjHP68n-1IcjLoNc6kwVkE/sendMessage', {
+
+    method: 'POST',
+
+    headers: { 'Content-Type': 'application/json' },
+
+    body: JSON.stringify({ chat_id: '246421345', text: msg })
+    
 
   }).then(r => {
 
@@ -770,11 +780,13 @@ ${items}
       updateCart();
 
       localStorage.removeItem('cart');
-
+      localStorage.setItem('userData', JSON.stringify({
+    name,
+    phone,
+    address
+  }));
       document.getElementById('name').value = '';
-
       document.getElementById('phone').value = '';
-
       document.getElementById('address').value = '';
 
     } else {
