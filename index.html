@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  
+
+  <style>
+
+body {
+  background: #FFF9F2;
+}
+
+.search-sort-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.search-sort-row input,
+.search-sort-row select,
+.search-sort-row .other-site-btn {
+  flex: 1 1 0;
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
+  margin: 10px auto; /* добавьте эту строку */
+}
+.other-site-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #007bff;
+  color: #fff !important;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.2s;
+  font-weight: bold;
+  height: 100%;
+}
+.other-site-btn:hover {
+  background: #0056b3;
+}
+@media (max-width: 600px) {
+  .search-sort-row {
+    flex-direction: column;
+    gap: 0;
+    max-width: 100%;
+  }
+  .other-site-btn {
+    margin-top: 8px;
+  }
+}
+
+    .qty-btn {
+  font-size: 18px;
+  padding: 2px 0;
+  margin: 0;
+  background: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  vertical-align: middle;
+  transition: background 0.2s;
+}
+.qty-btn:hover {
+  background: #218838;
+}
+
+
+body.modal-open {
+  overflow: hidden;           /* Запретить прокрутку */
+  pointer-events: none;       /* Запретить клики по всему body */
+}
+#previewBlock {
+  pointer-events: auto !important; /* Разрешить клики по модальному окну */
+}
+
+ button.delete-item {
+  background: none; /* Убираем фон */
+  border: none; /* Убираем границу */
+  color: #dc3545; /* Красный цвет для кнопки */
+  font-size: 14px; /* Размер текста */
+  cursor: pointer; /* Указываем, что это кнопка */
+  padding: 0; /* Убираем лишние внутренние отступы */
+  width: 20px; /* Устанавливаем фиксированную ширину */
+  height: 20px; /* Устанавливаем фиксированную высоту */
+  border-radius: 20%; /* Делаем кнопку круглой */
+  line-height: 1; /* Убираем лишние отступы внутри кнопки */
+  display: flex; /* Центрируем содержимое */
+  align-items: center;
+  justify-content: center;
+}
+
+button.delete-item:hover {
+  color: #c82333; /* Более тёмный красный при наведении */
+}
+
+    body {
+
+  background-image: url('фон.avif'); /* сюда вставь ссылку или путь к картинке */
+
+  background-size: cover;
+
+  background-repeat: no-repeat;
+
+  background-position: center center;
+
+}
+
+
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body { font-family: 'Arial', sans-serif; background: #f4f4f4; color: #333; }
+
+    h1, h2 { text-align: center; margin-bottom: 20px; animation: fadeIn 1s ease forwards; }
+
+    body {
+
+  background-image: url('фон.avif'); /* сюда вставь ссылку или путь к картинке */
+
+  background-size: cover;
+
+  background-repeat: no-repeat;
+
+  background-position: center center;
+
+}
+
+h1 {
+
+  color: rgb(255, 255, 255);
+
+}
+
+
+
+
+
+    input, select, button, textarea {
+
+      font-size: 1rem;
+
+      padding: 10px;
+
+      margin: 10px auto;
+
+      width: 100%;
+
+      max-width: 400px;
+
+      display: block;
+
+      border-radius: 5px;
+
+      border: 1px solid #ccc;
+
+    }
+
+    .cart-item {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 10px;
+
+}
+
+
+
+    button {
+
+      background: #28a745;
+
+      color: white;
+
+      border: none;
+
+      cursor: pointer;
+
+      transition: 0.3s;
+
+    }
+
+    button:hover { background: #218838; }
+
+
+
+    table {
+
+      width: 100%;
+
+      border-collapse: collapse;
+
+      margin-bottom: 20px;
+
+      background: white;
+
+      box-shadow: 0 0 10px #ccc;
+
+    }
+
+    th, td {
+
+      padding: 10px;
+
+      border: 1px solid #ddd;
+
+      text-align: center;
+
+    }
+
+    th { background: #f8f8f8; }
+
+
+
+    .product-img { max-width: 60px; height: auto; transition: transform 0.3s ease; }
+
+    .product-img:hover { transform: scale(1.1); }
+
+
+
+    .cart-summary { text-align: center; font-weight: bold; margin: 10px 0; }
+
+    .order-form, #orderHistory { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px #ccc; margin-top: 20px; }
+
+
+
+    .delete-order {
+
+      background: #dc3545;
+
+      color: white;
+
+      border: none;
+
+      padding: 8px 12px;
+
+      margin-top: 10px;
+
+      border-radius: 5px;
+
+      cursor: pointer;
+
+      transition: background 0.3s ease;
+
+    }
+
+    .delete-order:hover {
+
+      background: #c82333;
+
+    }
+
+
+
+    @keyframes fadeIn {
+
+      from { opacity: 0; transform: translateY(20px); }
+
+      to { opacity: 1; transform: translateY(0); }
+
+    }
+
+
+
+    /* Новая анимация для добавления в корзину */
+
+    @keyframes addToCart {
+
+      0% { transform: scale(1); background-color: #28a745; }
+
+      50% { transform: scale(1.2); background-color: #218838; }
+
+      100% { transform: scale(1); background-color: #28a745; }
+
+    }
+
+    .animate-add {
+
+      animation: addToCart 0.5s ease;
+
+    }
+
+
+
+    @media (max-width: 600px) {
+
+      th, td { font-size: 12px; padding: 6px; }
+
+      input, select, button, textarea { font-size: 0.9rem; padding: 8px; }
+
+      .cart-summary { font-size: 1.2rem; }
+
+      #cartList div { font-size: 0.9rem; }
+
+      .order-form input, .order-form button { width: 90%; }
+
+    }
+    @media (max-width: 600px) {
+  button.delete-item {
+    width: 20px; /* Устанавливаем фиксированную ширину */
+    height: 20px; /* Устанавливаем фиксированную высоту */
+    font-size: 12px; /* Уменьшаем размер текста */
+    padding: 0; /* Убираем лишние отступы */
+  }
+}
+
+  </style>
+      
+
+
+
+  <!-- SweetAlert2 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+
+<body>
+
+  <!-- Блок для просмотра фото -->
+  <div id="previewBlock" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:1000; pointer-events:auto;">
+    <div id="previewInner" style="position:absolute; top:10%; left:50%; transform:translateX(-50%); background:white; padding:20px; border-radius:10px; box-shadow:0 0 20px #0008;">
+      <span id="closePreview" style="cursor:pointer; float:right; font-size:24px;">&times;</span>
+      <img id="previewImg" src="" alt="Просмотр" style="max-width:90vw; max-height:70vh; display:block; margin:auto;">
+    </div>
+  </div>
+<!-- filepath: c:\Users\hp\Desktop\нож\index.html -->
+
+ 
+
+
+
+  <div class="search-sort-row">
+    <input type="text" id="search" placeholder="Поиск товара..." />
+    <select id="sort">
+      <option value="">Сортировка по цене</option>
+      <option value="asc">Сначала дешёвые</option>
+      <option value="desc">Сначала дорогие</option>
+    </select>
+    <a href="https://kara-ssyy-oomat.github.io/meloch/" target="_blank" class="other-site-btn">Другой сайт для мелоч</a>
+
+    <a href="https://kara-ssyy-oomat.github.io/noj/" target="_blank" class="other-site-btn">Другой сайт для нож</a>
+  </div>
+
+
+
+  <table>
+
+    <thead>
+      <tr>
+        <th>№</th>
+        <th>Фото</th>
+        <th>Название</th>
+        <th>Цена</th>
+        <th>Кол-во</th>
+        <th>Добавить</th>
+      </tr>
+    </thead>
+
+    <tbody id="productTable"></tbody>
+
+  </table>
+
+
+
+  <div class="order-form">
+
+    <h2>Оформить заказ</h2>
+
+    <div id="cartList"></div>
+
+    <div class="cart-summary">Итого: <span id="totalSum">0</span> с</div>
+
+    <button id="clearCart">Очистить корзину</button>
+
+    <input type="text" id="name" placeholder="Ваше имя" required />
+
+    <input type="tel" id="phone" placeholder="Телефон" required />
+
+    <input type="text" id="address" placeholder="Адрес доставки" required />
+
+    <button id="submitOrder">Отправить заказ</button>
+
+  </div>
+
+
+
+  <button id="toggleHistory">История заказов</button>
+
+  <div id="orderHistory" style="display:none">
+
+    <h2>История заказов</h2>
+
+    <ul id="historyList"></ul>
+
+  </div>
+
+
+
+  <!-- Блок "Связаться с нами" с отправкой в Telegram -->
+<div id="contact-block" style="max-width:600px;margin:32px auto 0 auto;padding:16px 20px;background:#eaf6fa;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+  <h2 style="margin-top:0;">Связаться с нами</h2>
+  <div style="font-size:1.1em; margin-bottom:16px;">
+    <b>Телефон для связи:</b><br>
+    <a href="tel:0555332133" style="color:#229ED9;text-decoration:none;font-weight:bold;">0555 33 21 33</a><br>
+    <a href="tel:0559009860" style="color:#229ED9;text-decoration:none;font-weight:bold;">0559 00 98 60</a>
+  </div>
+  <form id="contact-form" autocomplete="off">
+    <input type="text" id="contact-name" placeholder="Ваше имя" required style="width:100%;margin-bottom:8px;" />
+    <input type="tel" id="contact-phone" placeholder="Телефон" required style="width:100%;margin-bottom:8px;" />
+    <textarea id="contact-message" placeholder="Ваше сообщение" required style="width:100%;min-height:60px;margin-bottom:8px;"></textarea>
+    <button type="submit">Отправить сообщение</button>
+  </form>
+</div>
+
+  <!-- Кнопки вверх/вниз -->
+<div id="scroll-buttons" style="position:fixed;right:24px;bottom:32px;z-index:999;display:flex;flex-direction:column;gap:12px;">
+  <button id="scroll-up" style="width:48px;height:48px;border-radius:50%;background:#229ED9;color:#fff;font-size:1.6em;border:none;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:pointer;">▲</button>
+  <button id="scroll-down" style="width:48px;height:48px;border-radius:50%;background:#229ED9;color:#fff;font-size:1.6em;border:none;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:pointer;">▼</button>
+</div>
+
+  <script>
+ const products = [
+      
+
+
+ {id: 1, title: '36*15(84шт/кар)', price: 12, optPrice: 10, optQty: 84, minQty: 7, image: 'фото4лик/3515.jpg' },
+
+
+
+ {id: 2, title: '40*30(72шт/кар)', price: 20, optPrice: 16, optQty: 72,minQty: 6, image: 'фото4лик/4030.jpg' },
+{id: 3, title: '40*50(72шт/кар)', price: 30, optPrice: 25, optQty: 72,minQty: 6, image: 'img2.jpg' },
+{id: 4, title: '40*75(72шт/кар)', price: 40, optPrice: 35, optQty: 72,minQty: 6, image: 'фото4лик/4075.jpg' },
+{id: 5, title: '40*100(54шт/кар)', price: 50, optPrice: 45, optQty: 54,minQty: 6, image: 'фото4лик/40100.jpg' },
+{id: 6, title: '40*150(48шт/кар)', price: 65, optPrice: 60, optQty: 48,minQty: 6, image: 'фото4лик/40150.jpg' },
+{id: 7, title: '40*200(36шт/кар)', price: 85, optPrice: 80, optQty: 36,minQty: 6, image: 'фото4лик/40200.jpg' },
+{id: 8, title: '40*250(36шт/кар)', price: 110, optPrice: 100, optQty: 36,minQty: 6, image: 'фото4лик/40250.jpg' },
+{id: 9, title: '40*300(30шт/кар)', price: 150, optPrice: 130, optQty: 30,minQty: 6, image: 'фото4лик/40300.jpg' },
+{id: 10, title: '40*400*24шт/кар', price: 220, optPrice: 200, optQty: 24,minQty: 6, image: 'фото4лик/40400.jpg' },
+
+
+
+{id: 11, title: '45*30(60шт/кар)', price: 25, optPrice: 20, optQty: 60,minQty: 5, image: 'img2.jpg' },
+{id: 12, title: '45*50(60шт/кар)', price: 35, optPrice: 30, optQty: 60,minQty: 5, image: 'фото45/4550.jpg' },
+{id: 13, title: '45*75(60шт/кар)', price: 45, optPrice: 40, optQty: 60,minQty: 5, image: 'фото5лик/4575.jpg' },  
+{id: 14, title: '45*100(45шт/кар)', price: 55, optPrice: 50, optQty: 45,minQty: 5, image: 'фото5лик/45100.jpg' },
+{id: 15, title: '45*150(40шт/кар)', price: 70, optPrice: 65, optQty: 40,minQty: 5, image: 'фото5лик/45150.jpg' },
+
+
+
+{id: 16, title: '50*30(60шт/кар)', price: 25, optPrice: 25, optQty: 60,minQty: 5, image: 'фото5лик/5030.jpg' },
+{id: 17, title: '50*50(60шт/кар)', price: 40, optPrice: 35, optQty: 60,minQty: 5, image: 'фото5лик/5050.jpg' },
+{id: 18, title: '50*75(60шт/кар)', price: 50, optPrice: 45, optQty: 60,minQty: 5, image: 'фото5лик/5075.jpg' },
+{id: 19, title: '50*100(45шт/кар)', price: 65, optPrice: 60, optQty: 45,minQty: 5, image: 'фото5лик/50100.jpg' },
+{id: 20, title: '50*150(40шт/кар)', price: 80, optPrice: 70, optQty: 40,minQty: 5, image: 'фото5лик/50150.jpg' },
+{id: 21, title: '50*200(30шт/кар)', price: 120, optPrice: 100, optQty: 30,minQty: 5, image: 'фото5лик/50200.jpg' },
+{id: 22, title: '50*250(30шт/кар)', price: 160, optPrice: 130, optQty: 30,minQty: 5, image: 'фото5лик/50250.jpg' },
+{id: 23, title: '50*300(25шт/кар)', price: 170, optPrice: 150, optQty: 25,minQty: 5, image: 'фото5лик/50300.jpg' },
+{id: 24, title: '50*400(20шт/кар)', price: 240, optPrice: 220, optQty: 20,minQty: 5, image: 'фото5лик/50400.jpg' },
+
+
+{id: 25, title: '60*50(48шт/кар)', price: 40, optPrice: 35, optQty: 48,minQty: 4, image: 'img2.jpg' },
+{id: 26, title: '60*100(36шт/кар)', price: 75, optPrice: 60, optQty: 36,minQty: 4, image: 'img2.jpg' },
+{id: 27, title: '60*150(32шт/кар)', price: 90, optPrice: 85, optQty: 32,minQty: 4, image: 'img2.jpg' },
+
+{id: 28, title: '60*200(24шт/кар)', price: 140, optPrice: 130, optQty: 24,minQty: 4, image: '' },
+{id: 29, title: '60*250(24шт/кар)', price: 160, optPrice: 150, optQty: 24,minQty: 4, image: '' },
+{id: 30, title: '60*300(20шт/кар)', price: 190, optPrice: 180, optQty: 20,minQty: 4, image: '' },
+
+
+
+{id: 31, title: '80*200(18шт/кар)', price: 170, optPrice: 150, optQty: 18,minQty: 3, image: 'фото5лик/60200.jpg' },
+{id: 32, title: '80*250(18шт/кар)', price: 210, optPrice: 180, optQty: 18,minQty: 3, image: 'фото5лик/60250.jpg' },
+{id: 33, title: '80*300(15шт/кар)', price: 250, optPrice:220, optQty: 15,minQty: 3, image: 'фото5лик/60300.jpg' },
+
+
+
+{id: 34, title: 'стреч(50м)', price: 35, optPrice: 0, optQty: 0,minQty: 5, image: 'стерч/50м.jpg' },
+{id: 35, title: 'стреч(100м)(50шт/к)', price: 75, optPrice: 0, optQty: 0,minQty: 5, image: 'стерч/100м.jpg' },
+{id: 36, title: 'стреч(200м)(40шт/к)', price: 120, optPrice: 0, optQty: 0,minQty: 5, image: 'стерч/200м.jpg' },
+//{id: 37, title: 'стреч(1500)', price: 75, optPrice: 0, optQty: 0,minQty: 5, image: 'стерч/1500м.jpg' },
+{id: 38, title: 'стреч(3000)', price: 130, optPrice: 0, optQty: 0,minQty: 5, image: 'стерч/3000м.jpg' },
+{id: 39, title: 'Фольга пищевая нисо(10м)', price: 90, optPrice: 0, optQty: 0,minQty: 5, image: 'стерч/фалганисо.jpg' },
+{id: 40, title: 'Фольга пищевая симба(5м)', price: 70, optPrice: 0, optQty: 0,minQty: 5, image: 'стерч/фалгасимба.jpg' },
+//{id: 41, title: 'Фольга пищевая ', price: 40, optPrice: 0, optQty: 0,minQty: 5, image: 'стерч/фалгакар.jpg' },
+{id: 42, title: 'пергамент симба', price: 70, optPrice: 0, optQty: 0,minQty: 5, image: 'стерч/пергаментсимба.jpg' },
+{id: 43, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 44, title: 'пергамент', price: 60, optPrice: 0, optQty: 0,minQty: 5, image: 'стерч/пергамент.jpg' },
+//{id: 45, title: 'пергамент хозяюшка', price: 50, optPrice: 0, optQty: 0,minQty: 5, image: 'стерч/хозяю.jpg' },
+{id: 46, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 47, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 48, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 49, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 50, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 51, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 52, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 53, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 54, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 55, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 56, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 57, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 58, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 59, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 60, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 61, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 62, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 63, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 64, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 65, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 66, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 67, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 68, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 69, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 70, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 71, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 72, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 73, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 74, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 75, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 76, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 77, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 78, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 79, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 80, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 81, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 82, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 83, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 84, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 85, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 86, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 87, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 88, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 89, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 90, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 91, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 92, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 93, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 94, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 95, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 96, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 97, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 98, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 99, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+{id: 100, title: '', price: 0, optPrice: 0, optQty: 0, image: '' },
+     
+    ];
+
+
+
+
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+
+
+    const productTable = document.getElementById('productTable');
+
+    const search = document.getElementById('search');
+
+    const sort = document.getElementById('sort');
+
+    const cartList = document.getElementById('cartList');
+
+    const totalSum = document.getElementById('totalSum');
+
+
+// ...existing code...
+function renderProducts() {
+  let filtered = products.filter(p => p.title?.trim() && p.image?.trim());
+  if (search.value) {
+    filtered = filtered.filter(p => p.title.toLowerCase().includes(search.value.toLowerCase()));
+  }
+  if (sort.value) {
+    filtered.sort((a, b) => sort.value === 'asc' ? a.price - b.price : b.price - a.price);
+  }
+  productTable.innerHTML = '';
+  filtered.forEach((p, idx) => {
+  const min = p.minQty || 1;
+  const row = document.createElement('tr');
+  row.innerHTML = `
+    <td>${idx + 1}</td>
+    <td><img src="${p.image}" class="product-img" alt="${p.title}" style="cursor:pointer;" onclick="showPreview('${p.image}')"/></td>
+    <td>
+  ${p.title.split('(')[0]}
+  <br>
+  <span style="font-size:0.95em; color:#555;">
+    ${p.title.includes('(') ? '(' + p.title.split('(')[1] : ''}
+  </span>
+</td>
+    <td class="price-cell">${p.price}</td>
+    <td>
+  <div style="display:flex; flex-direction:column; align-items:center;">
+<input type="number" min="${min}" step="${min}" value="${min}" data-id="${p.id}" readonly style="width:70px;display:block;text-align:center;margin-bottom:4px;" />    <div>
+      <button type="button" class="qty-btn" onclick="changeQty(this, -${min})" style="width:32px;display:inline-block;">−</button>
+      <button type="button" class="qty-btn" onclick="changeQty(this, ${min})" style="width:32px;display:inline-block;">+</button>
+    </div>
+  </div>
+</td>
+    <td><button onclick="addToCart(${p.id}, '${p.title}', ${p.price}, '${p.image}', this)">добавить</button></td>
+  `;
+  productTable.appendChild(row);
+
+  // Обработчик изменения количества
+  const qtyInput = row.querySelector('input[type="number"]');
+  qtyInput.oninput = function() {
+    const priceCell = row.querySelector('.price-cell');
+    let price = p.price;
+    if (p.optPrice && p.optQty && +this.value >= p.optQty) price = p.optPrice;
+    priceCell.textContent = price;
+    // Обновляем кнопку, чтобы она передавала новую цену
+    const addBtn = row.querySelector('button');
+    addBtn.setAttribute('onclick', `addToCart(${p.id}, '${p.title}', ${price}, '${p.image}', this)`);
+  };
+});
+}
+// ...existing code...
+   
+
+function addToCart(id, title, price, image, btn) {
+  const qty = +btn.parentElement.parentElement.querySelector('input').value;
+  const product = products.find(p => p.id === id);
+  const minQty = product.minQty || 1;
+  if (qty < minQty || qty % minQty !== 0) {
+    Swal.fire('Ошибка', `Можно добавить только кратно ${minQty} шт.`, 'warning');
+    return;
+  }
+
+  const index = cart.findIndex(item => item.id === id);
+  if (index !== -1) {
+    cart[index].qty += qty;
+    // Пересчёт цены с учётом опта для нового общего количества
+    let newQty = cart[index].qty;
+    let newPrice = product.price;
+    if (product.optPrice && product.optQty && newQty >= product.optQty) {
+      newPrice = product.optPrice;
+    }
+    cart[index].price = newPrice;
+  } else {
+    // Пересчёт цены с учётом опта для первой партии
+    let finalPrice = product.price;
+    if (product.optPrice && product.optQty && qty >= product.optQty) {
+      finalPrice = product.optPrice;
+    }
+    cart.push({ id, title, price: finalPrice, qty });
+  }
+  updateCart();
+
+  // Анимация кнопки
+  btn.classList.add('animate-add');
+  setTimeout(() => btn.classList.remove('animate-add'), 500);
+
+  // Показываем уведомление
+  Swal.fire({
+    title: 'Товар добавлен в корзину!',
+    text: `${title} × ${qty} был добавлен в вашу корзину.`,
+    icon: 'success',
+    confirmButtonText: 'Ок',
+    position: 'bottom',
+    showConfirmButton: true,
+    timer: 1500,
+    padding: '10px',
+    toast: true
+  });
+
+  // Сохраняем корзину в localStorage
+  localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+
+
+
+    function updateCart() {
+
+  cartList.innerHTML = '';
+
+  let total = 0;
+
+  cart.forEach((item, i) => {
+
+    total += item.qty * item.price;
+
+    const div = document.createElement('div');
+
+    div.classList.add('cart-item');
+
+    div.innerHTML = `
+  <span style="flex-grow:1;">${item.title} — ${item.qty} × ${item.price}c = ${item.qty * item.price}c</span>
+  <button class="delete-item" onclick="removeFromCart(${i})">&times;</button>
+`;
+
+    cartList.appendChild(div);
+
+  });
+
+  totalSum.textContent = total;
+
+
+
+  // Проверка на пустоту корзины
+
+  const clearCartButton = document.getElementById('clearCart');
+
+  if (cart.length === 0) {
+
+    clearCartButton.style.display = 'none'; // скрыть кнопку, если корзина пуста
+
+  } else {
+
+    clearCartButton.style.display = 'block'; // показать кнопку, если корзина не пуста
+
+  }
+
+
+
+  // Сохраняем корзину в localStorage
+
+  localStorage.setItem('cart', JSON.stringify(cart));
+
+}
+
+
+
+
+
+    function removeFromCart(i) {
+
+      cart.splice(i, 1);
+
+      updateCart();
+
+    }
+
+
+
+    document.getElementById('submitOrder').onclick = () => {
+
+  const name = document.getElementById('name').value.trim();
+
+  const phone = document.getElementById('phone').value.trim();
+
+  const address = document.getElementById('address').value.trim();
+
+  if (!name || !phone || !address || cart.length === 0) {
+
+    Swal.fire('Ошибка', 'Заполните все поля и добавьте товары', 'warning');
+
+    return;
+
+  }
+  const items = cart.map(i => `${i.title} — ${i.qty}×${i.price}c=${i.qty * i.price}`).join('\n');
+
+const total = cart.reduce((sum, item) => sum + item.qty * item.price, 0);
+
+const msg = `Новый заказ:
+Имя: ${name}
+Телефон: ${phone}
+Адрес: ${address}
+Товары:
+${items}
+
+Итого: ${total}c`;
+ 
+  fetch('https://api.telegram.org/bot7960727448:AAF0B2mizrzj7sjHP68n-1IcjLoNc6kwVkE/sendMessage', {
+
+    method: 'POST',
+
+    headers: { 'Content-Type': 'application/json' },
+
+    body: JSON.stringify({ chat_id: '5567924440', text: msg })
+    
+
+  })
+    fetch('https://api.telegram.org/bot7960727448:AAF0B2mizrzj7sjHP68n-1IcjLoNc6kwVkE/sendMessage', {
+
+    method: 'POST',
+
+    headers: { 'Content-Type': 'application/json' },
+
+    body: JSON.stringify({ chat_id: '246421345', text: msg })
+    
+
+  }).then(r => {
+
+    if (r.ok) {
+
+      Swal.fire('Успех!', 'Ваш заказ отправлен!', 'success');
+
+      cart.length = 0;
+
+      updateCart();
+
+      localStorage.removeItem('cart');
+      localStorage.setItem('userData', JSON.stringify({
+    name,
+    phone,
+    address
+  }));
+      document.getElementById('name').value = '';
+      document.getElementById('phone').value = '';
+      document.getElementById('address').value = '';
+
+    } else {
+
+      Swal.fire('Ошибка', 'Не удалось отправить заказ. Попробуйте позже.', 'error');
+
+    }
+
+  }).catch(error => {
+
+    console.error(error);
+
+    Swal.fire('Ошибка', 'Не удалось отправить заказ. Проверьте подключение к интернету.', 'error');
+
+  });
+
+};
+
+document.getElementById('clearCart').onclick = () => {
+
+  cart.length = 0; // очищаем массив корзины
+
+  updateCart();    // обновляем отображение
+
+  localStorage.removeItem('cart'); // убираем данные из localStorage
+
+  Swal.fire('Корзина очищена!', '', 'success'); // показываем уведомление
+
+};
+
+
+
+
+
+      const items = cart.map(i => `${i.title} — ${i.qty}×${i.price}c`).join('\n');
+
+      const total = cart.reduce((sum, item) => sum + item.qty * item.price, 0);
+
+
+
+      const msg = `Новый заказ:
+
+Имя: ${name}
+
+Телефон: ${phone}
+
+Адрес: ${address}
+
+Товары:
+
+${items}
+
+
+
+Итого: ${total}c`;
+
+
+
+      fetch('https://api.telegram.org/bot<ТВОЙ_ТОКЕН>/sendMessage', {
+
+        method: 'POST',
+
+        headers: { 'Content-Type': 'application/json' },
+
+        body: JSON.stringify({ chat_id: '<ТВОЙ_CHAT_ID>', text: msg })
+
+      }).then(r => {
+
+        if (r.ok) {
+
+          Swal.fire('Успех!', 'Ваш заказ отправлен!', 'success');
+
+          cart.length = 0;
+
+          updateCart();
+
+          localStorage.removeItem('cart');
+
+          document.getElementById('name').value = '';
+
+          document.getElementById('phone').value = '';
+
+          document.getElementById('address').value = '';
+
+        } else {
+
+          Swal.fire('Ошибка', 'Не удалось отправить заказ. Попробуйте позже.', 'error');
+
+        }
+
+      });
+
+    ;
+
+
+
+    function deleteOrder(index) {
+
+      let history = JSON.parse(localStorage.getItem('orderHistory') || '[]');
+
+      history.splice(index, 1);
+
+      localStorage.setItem('orderHistory', JSON.stringify(history));
+
+      document.getElementById('toggleHistory').click();
+
+      document.getElementById('toggleHistory').click();
+
+    }
+
+
+
+    document.getElementById('toggleHistory').onclick = () => {
+
+  const hist = document.getElementById('orderHistory');
+
+  hist.style.display = hist.style.display === 'none' ? 'block' : 'none';
+
+
+
+  const history = JSON.parse(localStorage.getItem('orderHistory') || '[]');
+
+  const list = document.getElementById('historyList');
+
+  list.innerHTML = '';
+
+
+
+  if (history.length === 0) {
+
+    list.innerHTML = '<li>История заказов пуста.</li>';
+
+    document.getElementById('toggleHistory').style.display = 'none'; // Скрыть кнопку, если нет заказов
+
+    return;
+
+  }
+
+
+
+
+
+  // Показать кнопку только если есть заказы
+
+  document.getElementById('toggleHistory').style.display = history.length === 0 ? 'none' : 'block';
+
+};
+
+
+
+
+
+    search.oninput = renderProducts;
+
+    sort.onchange = renderProducts;
+
+    renderProducts();
+
+    updateCart();
+    function showPreview(src) {
+  document.getElementById('previewImg').src = src;
+  document.getElementById('previewBlock').style.display = 'block';
+  document.body.classList.add('modal-open');
+}
+
+document.getElementById('closePreview').onclick = function() {
+  document.getElementById('previewBlock').style.display = 'none';
+  document.body.classList.remove('modal-open');
+};
+
+document.getElementById('previewBlock').onclick = function(e) {
+  if (e.target === this) {
+    this.style.display = 'none';
+    document.body.classList.remove('modal-open');
+  }
+};
+
+
+
+function changeQty(btn, delta) {
+  // Найти input в той же строке таблицы
+  const row = btn.closest('tr');
+  const input = row.querySelector('input[type="number"]');
+  const min = +input.min;
+  let value = +input.value + delta;
+  if (value < min) value = min;
+  input.value = value;
+
+  // Обновить цену при изменении количества
+  const priceCell = row.querySelector('.price-cell');
+  const id = +input.dataset.id;
+  const product = products.find(p => p.id === id);
+  let price = product.price;
+  if (product.optPrice && product.optQty && value >= product.optQty) price = product.optPrice;
+  priceCell.textContent = price;
+  const addBtn = row.querySelector('button[onclick^="addToCart"]');
+  addBtn.setAttribute('onclick', `addToCart(${id}, '${product.title}', ${price}, '${product.image}', this)`);
+}
+document.addEventListener('DOMContentLoaded', function() {
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.onsubmit = function(e) {
+      e.preventDefault();
+      const name = document.getElementById('contact-name').value.trim();
+      const phone = document.getElementById('contact-phone').value.trim();
+      const message = document.getElementById('contact-message').value.trim();
+      if (!name || !phone || !message) return;
+      // Отправка сообщения в Telegram
+      const tgToken = '7960727448:AAF0B2mizrzj7sjHP68n-1IcjLoNc6kwVkE';
+      const chatId = '5567924440';
+      const text = `Сообщение с сайта:\nИмя: ${name}\nТелефон: ${phone}\nСообщение: ${message}`;
+      fetch(`https://api.telegram.org/bot${tgToken}/sendMessage`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ chat_id: chatId, text })
+      })
+        .then(r => {
+          if (r.ok) {
+            contactForm.reset();
+            Swal.fire({
+              title: 'Сообщение отправлено!',
+              icon: 'success',
+              timer: 1500,
+              showConfirmButton: false,
+              position: 'center',
+              toast: true
+            });
+          } else {
+            Swal.fire('Ошибка', 'Ошибка отправки сообщения. Попробуйте позже.', 'error');
+          }
+        })
+        .catch(() => {
+          Swal.fire('Ошибка', 'Ошибка отправки сообщения. Проверьте интернет.', 'error');
+        });
+    };
+  }
+
+  // Кнопки вверх/вниз
+  const btnUp = document.getElementById('scroll-up');
+  const btnDown = document.getElementById('scroll-down');
+  if (btnUp) btnUp.onclick = () => window.scrollTo({top:0,behavior:'smooth'});
+  if (btnDown) btnDown.onclick = () => window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'});
+});
+  </script>
+
+</body>
+
+</html>
